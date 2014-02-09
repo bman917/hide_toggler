@@ -1,7 +1,7 @@
 jQuery.fn.hide_toggler = function() {
 
   this.on('click', function() {
-    $(this).closest('.hide_toggler').slideToggle('fast');
+    $(this).closest('.toggler_parent').find('.togger_child').slideToggle('fast');
     event.preventDefault();
   });
   return this;
