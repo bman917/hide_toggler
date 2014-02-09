@@ -1,6 +1,6 @@
 # HideToggler
 
-TODO: Write a gem description
+Contains a JQuery plugin for quickly setting a link for toggling a div
 
 ## Installation
 
