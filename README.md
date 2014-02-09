@@ -18,22 +18,22 @@ Or install it yourself as:
 
 ## Usage
 
-<%=javascript_tag do %>
+	<%=javascript_tag do %>
 
-$(document).ready(function(){
+	$(document).ready(function(){
 
-  $('.toggler_link').hide_toggler();
-  $('.show_help_link').hide_toggler();
+	  $('.toggler_link').hide_toggler();
+	  $('.show_help_link').hide_toggler();
 
-});
-<% end %>
-<div class="toggler_parent">
-  <%=link_to 'Help', '', class: 'help show_help_link'%>
-  <div id="help" class="togger_child hidden">
-  <%=link_to 'Hide', '', class: 'toggler_link'%>
-  Lorem ipsum dolor sit amet adepesisi...
-  </div>
-</div>
+	});
+	<% end %>
+	<div class="toggler_parent">
+	  <%=link_to 'Help', '', class: 'help show_help_link'%>
+	  <div id="help" class="togger_child hidden">
+	  <%=link_to 'Hide', '', class: 'toggler_link'%>
+	  Lorem ipsum dolor sit amet adepesisi...
+	  </div>
+	</div>
 
 ## Contributing
 
