@@ -1,6 +1,6 @@
 jQuery.fn.hide_toggler = function() {
 
-  this.on('click', function() {
+  this.on('click', function(event) {
     $(this).closest('.toggler_parent').find('.togger_child').slideToggle('fast');
     event.preventDefault();
   });
