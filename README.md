@@ -16,6 +16,10 @@ Or install it yourself as:
 
     $ gem install hide_toggler
 
+Require toggler on application.js
+
+//= require hide_toggler
+
 ## Usage
 
 	<%=javascript_tag do %>
