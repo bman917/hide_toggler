@@ -26,3 +26,5 @@ jQuery.fn.remove_loading_image = function() {
    $(this).find('img.loading').remove();
   return this;
 }
+
+document.addEventListener("page:load",add_loading_image_on_toggler_form_submit);
