@@ -7,8 +7,8 @@ jQuery.fn.hide_toggler = function() {
   return this;
 }
 
-$(function () {
 
+function add_loading_image_on_toggler_form_submit() {
 	/*
 	<div class="wip"> //waiting image parent
 		<div class="wic"></div> //waiting image container
@@ -19,7 +19,8 @@ $(function () {
 		$(this).slideUp('fast');
 		$(this).closest('.toggler').find('.add_fields').slideDown('slow', adjustHeight);
 	});
-});
+
+}
 
 jQuery.fn.remove_loading_image = function() {
    $(this).find('img.loading').remove();
