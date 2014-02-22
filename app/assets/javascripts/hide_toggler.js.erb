@@ -14,11 +14,14 @@ function add_loading_image_on_toggler_form_submit() {
 		<div class="wic"></div> //waiting image container
 	</div>
 	*/
+  $(function () {
+  $('.toggler form').off('submit');
 	$('.toggler form').on('submit', function() {
 		$(this).closest('.wip').find('.wic').append('<%=image_tag('loading_bar.gif', size: '100x15', class: 'loading')%>');
 		$(this).slideUp('fast');
-		$(this).closest('.toggler').find('.add_fields').slideDown('slow');
+		$(this).closest('.toggler').find('.add_fields').fadeIn('slow');
 	});
+  });
 
 }
 
@@ -27,11 +30,9 @@ jQuery.fn.remove_loading_image = function() {
   return this;
 }
 
+document.addEventListener('page:change', add_loading_image_on_toggler_form_submit);
 document.addEventListener("page:load",add_loading_image_on_toggler_form_submit);
 
-$(function () {
-	add_loading_image_on_toggler_form_submit();
-});
 
 function overlay() {
     $('#content').append("<div class='overlay'></div>");
