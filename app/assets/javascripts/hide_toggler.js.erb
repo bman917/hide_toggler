@@ -17,7 +17,7 @@ function add_loading_image_on_toggler_form_submit() {
 	$('.toggler form').on('submit', function() {
 		$(this).closest('.wip').find('.wic').append('<%=image_tag('loading_bar.gif', size: '100x15', class: 'loading')%>');
 		$(this).slideUp('fast');
-		$(this).closest('.toggler').find('.add_fields').slideDown('slow', adjustHeight);
+		$(this).closest('.toggler').find('.add_fields').slideDown('slow');
 	});
 
 }
