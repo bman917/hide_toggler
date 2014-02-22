@@ -32,3 +32,18 @@ document.addEventListener("page:load",add_loading_image_on_toggler_form_submit);
 $(function () {
 	add_loading_image_on_toggler_form_submit();
 });
+
+function overlay() {
+    $('#content').append("<div class='overlay'></div>");
+    $('#wait_message').toggle();
+    $('#wait_message').addClass('modal'); 
+}
+
+function remove_overlay() {
+  $('.overlay').remove();
+  $('#wait_message').removeClass('modal');
+  $('#wait_message').toggle();
+}
+
+ document.addEventListener("page:fetch", overlay);
+ // document.addEventListener("page:receive", remove_overlay);
