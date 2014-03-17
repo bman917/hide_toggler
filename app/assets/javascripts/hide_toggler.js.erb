@@ -47,4 +47,4 @@ function remove_overlay() {
 }
 
  document.addEventListener("page:fetch", overlay);
- // document.addEventListener("page:receive", remove_overlay);
+ document.addEventListener("page:receive", remove_overlay);
