@@ -36,14 +36,14 @@ document.addEventListener("page:load",add_loading_image_on_toggler_form_submit);
 
 function overlay() {
     $('#content').append("<div class='overlay'></div>");
-    $('#wait_message').toggle();
+    $('#wait_message').show();
     $('#wait_message').addClass('modal'); 
 }
 
 function remove_overlay() {
   $('.overlay').remove();
   $('#wait_message').removeClass('modal');
-  $('#wait_message').toggle();
+  $('#wait_message').hide();
 }
 
  document.addEventListener("page:fetch", overlay);
