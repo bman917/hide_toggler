@@ -14,17 +14,29 @@
 .modal {
     width: 150px;
     height: 40px;
-    line-height: 45px;
-    position: fixed;
-    top: 38%; 
-    left: 38%;
-    background-color: white;
+    margin: auto;
+    position: absolute;
+    top: 0; left: 0; bottom: 0; right: 0;
     border-radius: 10px;
     text-align: center;
-    border: 2px dotted #D4D4D4;
-
+    vertical-align: middle;
     z-index: 11; /* 1px higher than the overlay layer */
+}
 
-
+#timeout {
+  z-index: 20;
+  height: 80px;
+  border-radius: 10px;
+  width: 300px;
+  border: 10px solid #CF5713;
+  background: #FF8632;
+  span {
+    text-align: center;
+    font-weight: bolder;
+    margin-top: 10px;
+    display: block;
+    vertical-align: middle;
+  }
+  
 }
 

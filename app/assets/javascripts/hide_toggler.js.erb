@@ -33,17 +33,37 @@ jQuery.fn.remove_loading_image = function() {
 document.addEventListener('page:change', add_loading_image_on_toggler_form_submit);
 document.addEventListener("page:load",add_loading_image_on_toggler_form_submit);
 
+/*
+Used by overlay method. This will hold the reference to the timeout event. 
+Useful when the timeout listener need to be cleared.
+*/
+var timeoutRef;
 
 function overlay() {
     $('#content').append("<div class='overlay'></div>");
     $('#wait_message').show();
     $('#wait_message').addClass('modal'); 
+
+    if(timeoutRef == null) {
+      timeoutRef = setTimeout(add_timeout_modal, 15000);
+      document.addEventListener("page:receive", function(){timeoutRef = null; clearTimeout(timeoutRef)});
+    }
 }
 
 function remove_overlay() {
   $('.overlay').remove();
   $('#wait_message').removeClass('modal');
   $('#wait_message').hide();
+  $('#timeout').remove();  
+  if(timeoutRef) {
+    clearTimeout(timeoutRef);
+    timeoutRef = null;
+  }
+}
+
+function add_timeout_modal() {
+  remove_overlay();
+  $('#content').append("<div id='timeout' class='Absolute-Center'><span>Slow network connection.<br/>You can wait some more....<br/>...Or click reload.&nbsp;<a href='.'>Reload</a></span></div>");
 }
 
  document.addEventListener("page:fetch", overlay);
